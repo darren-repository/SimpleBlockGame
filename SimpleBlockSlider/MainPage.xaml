@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="SimpleBlockSlider.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleBlockSlider"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel x:Name="xrpBlockSliderGame" SizeChanged="xrpBlockSliderGame_SizeChanged">
+        <RelativePanel x:Name="xrpGameSelection" UseLayoutRounding="True" VerticalAlignment="Top" Margin="10,10,-1270,-100" Height="90" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="1260" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <RelativePanel.RenderTransform>
+                <CompositeTransform/>
+            </RelativePanel.RenderTransform>
+            <RelativePanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFFF0808" Offset="1"/>
+                </LinearGradientBrush>
+            </RelativePanel.Background>
+            <ComboBox x:Name="cboColumns" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="65" Margin="185,25,-186,-38" SelectedIndex="0" FontSize="24" FontWeight="Bold" SelectionChanged="cboColumns_SelectionChanged">
+                <ComboBoxItem Content="3" Foreground="Black"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="5"/>
+                <ComboBoxItem Content="6"/>
+            </ComboBox>
+            <ComboBox x:Name="cboRows" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="65" Margin="345,25,-346,-38" SelectedIndex="0" FontWeight="Bold" FontSize="24" SelectionChanged="cboRows_SelectionChanged">
+                <ComboBoxItem Content="3"/>
+                <ComboBoxItem Content="4"/>
+                <ComboBoxItem Content="5"/>
+                <ComboBoxItem Content="6"/>
+            </ComboBox>
+        </RelativePanel>
+        <RelativePanel x:Name="xrpGameBlocks" Height="610" UseLayoutRounding="True" VerticalAlignment="Top" Margin="10,100,0,0" SizeChanged="xrpGameBlocks_SizeChanged" LayoutUpdated="xrpGameBlocks_LayoutUpdated" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWith="xrpGameSelection" HorizontalAlignment="Left" Width="1260">
+            <RelativePanel.Background>
+                <ImageBrush ImageSource="Assets/park-bench-cherry-pink.png"/>
+            </RelativePanel.Background>
+        </RelativePanel>
+    </RelativePanel>
+</Page>
