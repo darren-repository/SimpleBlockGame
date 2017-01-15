@@ -58,6 +58,29 @@ namespace SimpleBlockSlider
         private bool CreateGameButtons(Panel ctlPanel)
         {
             int iNumberButtons = 0;
+            ImageBrush ibButtonImageBrush = new ImageBrush();
+            LinearGradientBrush lgbButtonForeColor = new LinearGradientBrush();
+
+            GradientStopCollection gscForeColorGradientStops = new GradientStopCollection();
+            GradientStop gsForeColorStopRed = new GradientStop();
+            GradientStop gsForeColorStopGreen = new GradientStop();
+            GradientStop gsForeColorStopPurple = new GradientStop();
+
+            gsForeColorStopRed.Color = Windows.UI.Colors.Red;
+            gsForeColorStopRed.Offset = 0.0;
+            gsForeColorStopGreen.Color = Windows.UI.Colors.Green;
+            gsForeColorStopGreen.Offset = 0.50;
+            gsForeColorStopPurple.Color = Windows.UI.Colors.Purple;
+            gsForeColorStopPurple.Offset = 1.0;
+
+            gscForeColorGradientStops.Add(gsForeColorStopRed);
+            gscForeColorGradientStops.Add(gsForeColorStopGreen);
+            gscForeColorGradientStops.Add(gsForeColorStopPurple);
+
+            lgbButtonForeColor.GradientStops = gscForeColorGradientStops;
+
+            lgbButtonForeColor.StartPoint = new Point(1, 0);
+            lgbButtonForeColor.EndPoint = new Point(0, 1);
 
             //Check to see if an array of buttons already exists, remove them from the UI panel then and delete them
             if (ctlArrayOfButtons != null)
@@ -84,6 +107,10 @@ namespace SimpleBlockSlider
                 return false; //failed to allocate memory
             }
 
+            //Load the image asset from the list of assets to be used as the Image on the block
+            ibButtonImageBrush.Stretch = Stretch.Fill;
+            ibButtonImageBrush.ImageSource = new Windows.UI.Xaml.Media.Imaging.BitmapImage(new Uri("ms-appx:///Assets/Tundra.Grey.Marble.256.png"));
+
             //Iterate through each newly created button to set it up for game play
             for (int iButton = 0; iButton < iNumberButtons; iButton++)
             {
@@ -104,19 +131,16 @@ namespace SimpleBlockSlider
                 ctlArrayOfButtons[iButton].Click += GameButtonClick;
 
                 //Adjust miscellaneous settings
-                ctlArrayOfButtons[iButton].Foreground = new SolidColorBrush(Windows.UI.Colors.Black);
+                ctlArrayOfButtons[iButton].FontSize = 48;
+                ctlArrayOfButtons[iButton].FontWeight = Windows.UI.Text.FontWeights.Bold;
+                ctlArrayOfButtons[iButton].Foreground = lgbButtonForeColor; // new SolidColorBrush(Windows.UI.Colors.Black);
                 ctlArrayOfButtons[iButton].Foreground.Opacity = 1.0;
-                ctlArrayOfButtons[iButton].Background = new SolidColorBrush(Windows.UI.Colors.Beige);
-                ctlArrayOfButtons[iButton].Background.Opacity = 1.0;
+                ctlArrayOfButtons[iButton].Background = ibButtonImageBrush;
+                ctlArrayOfButtons[iButton].Background.Opacity = 0.8;
                 ctlArrayOfButtons[iButton].AllowFocusOnInteraction = false;
                 ctlArrayOfButtons[iButton].ClickMode = ClickMode.Release;
-                ctlArrayOfButtons[iButton].FocusVisualPrimaryBrush = new SolidColorBrush(Windows.UI.Colors.Black);
-                ctlArrayOfButtons[iButton].FocusVisualPrimaryBrush.Opacity = 1.0;
-                ctlArrayOfButtons[iButton].FocusVisualSecondaryBrush = new SolidColorBrush(Windows.UI.Colors.Beige);
-                ctlArrayOfButtons[iButton].FocusVisualSecondaryBrush.Opacity = 1.0;
                 ctlArrayOfButtons[iButton].Opacity = 1.0;
                 ctlArrayOfButtons[iButton].UseLayoutRounding = true;
-                ctlArrayOfButtons[iButton].UseSystemFocusVisuals = false;
 
                 ctlPanel.Children.Add(ctlArrayOfButtons[iButton]);
             }

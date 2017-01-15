@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
     <RelativePanel x:Name="xrpBlockSliderGame" SizeChanged="xrpBlockSliderGame_SizeChanged">
         <RelativePanel x:Name="xrpGameSelection" UseLayoutRounding="True" VerticalAlignment="Top" Margin="10,10,-1270,-100" Height="90" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="1260" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
             <RelativePanel.RenderTransform>
@@ -33,7 +33,7 @@
         </RelativePanel>
         <RelativePanel x:Name="xrpGameBlocks" Height="610" UseLayoutRounding="True" VerticalAlignment="Top" Margin="10,100,0,0" SizeChanged="xrpGameBlocks_SizeChanged" LayoutUpdated="xrpGameBlocks_LayoutUpdated" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignTopWith="xrpGameSelection" HorizontalAlignment="Left" Width="1260">
             <RelativePanel.Background>
-                <ImageBrush ImageSource="Assets/park-bench-cherry-pink.png"/>
+                <ImageBrush ImageSource="Assets/valley.fog.bmp"/>
             </RelativePanel.Background>
         </RelativePanel>
     </RelativePanel>

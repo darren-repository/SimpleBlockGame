@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/.vs/SimpleBlockSlider/v14/.suo
+/SimpleBlockSlider/bin/x64/Release
+/SimpleBlockSlider/obj/x64/Release
+/SimpleBlockSlider/SimpleBlockSlider_TemporaryKey.pfx

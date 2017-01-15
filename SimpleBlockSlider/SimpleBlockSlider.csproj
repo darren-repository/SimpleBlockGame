@@ -113,6 +113,10 @@
   <ItemGroup>
     <Content Include="Assets\park-bench-cherry-pink.png" />
     <Content Include="Assets\purple-coloring-forest.png" />
+    <Content Include="Assets\Tundra.Grey.Marble.1024.png" />
+    <Content Include="Assets\Tundra.Grey.Marble.256.png" />
+    <Content Include="Assets\Tundra.Grey.Marble.512.png" />
+    <Content Include="Assets\Valley.Fog.bmp" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
